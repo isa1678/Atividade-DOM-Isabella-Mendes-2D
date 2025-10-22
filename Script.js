@@ -27,3 +27,6 @@ taskForm.addEventListener('submit', function(e) {
   taskInput.value = '';
   taskInput.focus();
 });
+// Delegação de eventos no <ul>
+taskList.addEventListener('click', function(e) {
+  const li = e.target.closest('li');
