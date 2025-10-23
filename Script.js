@@ -27,6 +27,28 @@ taskForm.addEventListener('submit', function(e) {
   taskInput.value = '';
   taskInput.focus();
 });
+
 // Delegação de eventos no <ul>
 taskList.addEventListener('click', function(e) {
   const li = e.target.closest('li');
+  if (!li) return;
+
+  // remover tarefa 
+  if (e.target.classList.contains('delete-btn')) {
+    li.remove();
+    return;
+  }
+
+  // marcar como concluida 
+  if (e.target.tagName === 'SPAN') {
+    li.classList.toggle('completed');
+  }
+});
+
+let currentFilter = 'all';
+
+//Editar texto ao clicar duas vezes 
+taskList.addEventListener('dblclick', function(e) {
+  if (e.target.tagName === 'SPAN') {
+    const span = e.target;
+    const input = document.createElement('input');

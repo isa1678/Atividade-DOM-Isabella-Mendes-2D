@@ -6,6 +6,7 @@
  <title>Lista de Tarefas - Aula 1</title>
  <link rel="stylesheet" href="Style.css">
 </head> 
+
 <body>
  <div class="container">
     <h1>Lista de Tarefas - DOM (Aula 1)</h1>
@@ -15,7 +16,12 @@
     </form>
 
     <ul id="taskList">
-        <!-- Tarefas vão aparecer aqui -->
+<div class="controls"
+   <button class="filter data filter="all" type="button">Todas</button>
+   <button class="filter data filter="active" type="button">Ativas</button>
+   <button class="filter data filter="completed" type="button">concluídas</button>
+    </div>
+      <!-- Tarefas vão aparecer aqui -->
     </ul>
   </div>
   <script src="Script.js"></script>
